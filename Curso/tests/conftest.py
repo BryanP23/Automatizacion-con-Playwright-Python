@@ -14,7 +14,7 @@ def browser():
         # ⚙️ Configuración del navegador
         browser = p.chromium.launch(
             headless=False,   # False = abre la ventana del navegador (útil para ver la prueba)
-            slow_mo=2500    # Espera de 1000 ms entre cada acción (más lento y visible) entre mas alto el número, más lento (útil para ver la prueba)
+            slow_mo=2000    # Espera de 2000 ms entre cada acción (más lento y visible) entre mas alto el número, más lento (útil para ver la prueba)
         )
         yield browser
         browser.close()

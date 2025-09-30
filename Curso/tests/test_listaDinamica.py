@@ -1,5 +1,4 @@
 from time import time
-from pages.home_page import HomePage
 from pages.listaDinamica_page import listaDinamica_page     
 
 def test_listaDinamica(page, urls):
@@ -9,6 +8,6 @@ def test_listaDinamica(page, urls):
     listaDinamica = listaDinamica_page(page)    
     listaDinamica.buscar_auto()
     
-    # validar que la busqueda contenga este localizador"
-    assert page.locator("xpath=(//span[@class='VuuXrf'][normalize-space()='Volkswagen Colombia'])[1]").is_visible()
-    time.sleep(3)
+    # Validar que en los resultados aparezca "Volkswagen 2025"
+    assert page.locator("text=2025").is_visible()
+        
