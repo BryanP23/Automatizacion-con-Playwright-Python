@@ -2,7 +2,7 @@
 from pages.login_page import LoginPage
 
 def test_login_success(page, pytestconfig):
-    base_url = pytestconfig.getini("base_url")
+    base_url = pytestconfig.getini("demoqa_url")
 
     login_page = LoginPage(page)
     login_page.navigate(base_url)

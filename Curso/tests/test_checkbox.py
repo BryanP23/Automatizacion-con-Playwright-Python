@@ -1,7 +1,10 @@
 from pages.home_page import HomePage
 from pages.check_Box_page import CheckBoxPage
 
-def test_seleccionar_checkBox(page):
+def test_seleccionar_checkBox(page, urls):
+   # 🚀 Ir a la URL de DemoQA (desde pytest.ini)
+    page.goto(urls["demoqa"])
+    
     home = HomePage(page)
     home.go_to_checkBox()
 

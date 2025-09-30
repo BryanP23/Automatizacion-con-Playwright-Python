@@ -1,6 +1,12 @@
 import pytest
 from playwright.sync_api import sync_playwright
 
+# 🔹 Registrar las opciones personalizadas de pytest.ini
+def pytest_addoption(parser):
+    parser.addini("demoqa_url", "Base URL para DemoQA")
+    parser.addini("datatables_url", "Base URL para DataTables")
+    parser.addini("google_url", "Base URL para Google")
+
 # ✅ Fixture para lanzar el browser una sola vez en la sesión
 @pytest.fixture(scope="session")
 def browser():
@@ -8,18 +14,23 @@ def browser():
         # ⚙️ Configuración del navegador
         browser = p.chromium.launch(
             headless=False,   # False = abre la ventana del navegador (útil para ver la prueba)
-            slow_mo=1000    # Espera de 1000 ms entre cada acción (más lento y visible) entre mas alto el número, más lento (útil para ver la prueba)
+            slow_mo=2500    # Espera de 1000 ms entre cada acción (más lento y visible) entre mas alto el número, más lento (útil para ver la prueba)
         )
         yield browser
         browser.close()
-
+        
+# ✅ Fixture con URLs centralizadas (del pytest.ini)
+@pytest.fixture(scope="session")
+def urls(pytestconfig):
+    return {
+        "demoqa": pytestconfig.getini("demoqa_url"),
+        "datatables": pytestconfig.getini("datatables_url"),
+        "google": pytestconfig.getini("google_url"),
+    }
 
 # ✅ Fixture principal que crea la "page" para cada test
 @pytest.fixture
-def page(browser, pytestconfig):
-    # 🔗 Obtenemos la URL base definida en pytest.ini
-    base_url = pytestconfig.getini("base_url")
-
+def page(browser):
 # 🎥 Creamos un contexto con grabación de video activada
 # 📌 IMPORTANTE: Aquí es donde se activa la grabación
     context = browser.new_context(
@@ -32,7 +43,7 @@ def page(browser, pytestconfig):
     page = context.new_page()
     
     
- # 🚀 Script global para resaltar clics con un círculo
+ # 🚀 Script global para resaltar clics con un círculo espandible rojo
     page.add_init_script("""
         (() => {
             document.addEventListener('mousedown', e => {
@@ -59,12 +70,6 @@ def page(browser, pytestconfig):
             });
         })();
     """)
-
-
-
-
-    # 🚀 Ir a la URL base
-    page.goto(base_url)
 
     # 🔄 Retornar la página al test
     yield page

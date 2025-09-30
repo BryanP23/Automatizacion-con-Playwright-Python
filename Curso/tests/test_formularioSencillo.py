@@ -2,7 +2,10 @@ from pages.home_page import HomePage
 from pages.formularioSencillo_page import FormularioSencilloPage
 from playwright.sync_api import expect
 
-def test_llenar_formulario(page):
+def test_llenar_formulario(page, urls):
+    # 🚀 Ir a la URL de DemoQA (desde pytest.ini)
+    page.goto(urls["demoqa"])
+
     home = HomePage(page)
     home.go_to_formularioSencillo()
 
