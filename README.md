@@ -45,53 +45,57 @@ Proyecto-con-Playwright/
 │   ├── requirements.txt      # Dependencias del proyecto
 │   └── README.md             # Documentación del proyecto
 
-⚡ Cómo ejecutar el proyecto
+# ⚡ Cómo ejecutar el proyecto
 
 Clonar el repositorio:
 
+```bash
 git clone https://github.com/tu-usuario/Proyecto-con-Playwright.git
 cd Proyecto-con-Playwright/Curso
-
+```
 
 Instalar dependencias:
 
+```bash
 pip install -r requirements.txt
-
+```
 
 Ejecutar pruebas:
 
+```bash
 pytest -v
-
+```
 
 O para ejecutar en navegador con UI:
 
+```bash
 pytest --headed
+```
 
-🎯 Objetivo del proyecto
+---
 
-Practicar y consolidar mis conocimientos en QA Automation.
+## 🎯 Objetivo del proyecto
 
-Mostrar buenas prácticas en la organización de proyectos y el uso de Playwright con Python.
+- Practicar y consolidar mis conocimientos en QA Automation.
+- Mostrar buenas prácticas en la organización de proyectos y el uso de Playwright con Python.
+- Ampliar el proyecto hacia casos más complejos como e-commerce, validación de datos y pruebas end-to-end.
 
-Ampliar el proyecto hacia casos más complejos como e-commerce, validación de datos y pruebas end-to-end.
+---
 
-📌 Próximos pasos
+## 📌 Próximos pasos
 
-✅ Más formularios complejos.
+- ✅ Más formularios complejos.
+- ✅ Manejo avanzado de tablas dinámicas.
+- 🛒 Flujo de compra en Mattelsa.
+- 🔗 Integración con CI/CD (GitHub Actions).
+- 📊 Reportes de pruebas más completos (Allure u otros).
 
-✅ Manejo avanzado de tablas dinámicas.
+---
 
-🛒 Flujo de compra en Mattelsa.
+## ✨ Autor
 
-🔗 Integración con CI/CD (GitHub Actions).
-
-📊 Reportes de pruebas más completos (Allure u otros).
-
-✨ Autor
-
-👨‍💻 Bryan Polo
-🔗 LinkedIn
-https://www.linkedin.com/in/bryanpolo/
+👨‍💻 Bryan Polo  
+🔗 [LinkedIn](https://www.linkedin.com/in/bryanpolo/)
 
 
 
