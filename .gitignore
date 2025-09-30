@@ -1,0 +1,41 @@
+# Carpetas de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+.DS_Store
+
+# Entornos virtuales
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Configuración de VSCode
+.vscode/
+*.code-workspace
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+videos/
+traces/
+
+# Pytest
+.pytest_cache/
+.cache/
+
+# Archivos de sistema (Windows / Mac)
+Thumbs.db
+ehthumbs.db
+Icon?
